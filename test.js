@@ -25,9 +25,9 @@ describe('visit', function () {
 
 		assert.strictEqual(results.length, 4)
 		
-		assert(~results.indexOf('d c {"c":"d"}'))
-		assert(~results.indexOf('1 0 [1,2]'))
-		assert(~results.indexOf('2 1 [1,2]'))
-		assert(~results.indexOf('l x {"x":"l"}'))
+		assert(results.indexOf('d c {"c":"d"}') > -1)
+		assert(results.indexOf('1 0 [1,2]')> -1)
+		assert(results.indexOf('2 1 [1,2]')> -1)
+		assert(results.indexOf('l x {"x":"l"}')> -1)
 	})	
 })
