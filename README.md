@@ -1,5 +1,9 @@
 # visit values
 
+Visit all values in an object, depth first order.
+
+Array members will be visited individually as well.
+
 ### install
 npm install --save visit-values
 
