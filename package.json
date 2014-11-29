@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha -R spec"
   },
+  "keywords": [ "visitor", "object", "visit" ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kessler/node-visit-values"
