@@ -1,9 +1,11 @@
-var assert = require('assert')
-var visitValues = require('./index.js')
+'use strict'
+
+const assert = require('assert')
+const visitValues = require('./index.js')
 
 describe('visit', function () {
 	it('visits', function() {
-		var tree = {
+		let tree = {
 			a: {
 				b: {
 					c: 'd'
@@ -16,7 +18,7 @@ describe('visit', function () {
 			}
 		}
 
-		var results = []
+		let results = []
 
 		visitValues(tree, function(v, k, p) {
 			//push a stringified form of the arguments for easy lookup later

@@ -1,3 +1,5 @@
+'use strict'
+
 /*
 	visit all the children of a javascript object
 
@@ -5,18 +7,26 @@
 
 	function(value, key, parent) {}
 */
-var visit = module.exports = function (current, fn) {
+let visit = module.exports = (current, fn) => {
 
-	for (var k in current) {
-		var value = current[k]
+	for (let i = 0, keys = Object.keys(current); i < keys.length; i++) {
+		let key = keys[i]
+		let value = current[key]
 
 		if (value === undefined || value === null) continue
 
 		if (typeof value === 'object' || typeof value === 'function') {
-			visit(current[k], fn)
+			visit(current[key], fn)
 			continue
 		}
 
-		fn(current[k], k, current)
+		let proceed = fn(current[key], key, current)
+
+		// returning false (and only false)
+		// from the visitor function will stop the 
+		// visitations
+		if (proceed === false) {
+			break;
+		}
 	}
 }
